@@ -1,3 +1,5 @@
+require('babel/polyfill');
+
 var web_console = require('./');
 
 var frontend_port = 9090;
