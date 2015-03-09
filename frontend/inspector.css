@@ -933,10 +933,12 @@ body.platform-linux .monospace, body.platform-linux .source-code {
 }
 
 #console-prompt::before {
+    content:"Root";
     background-image: url(Images/userInputIcon.png);
 }
 
 .console-user-command-result.console-log-level::before {
+    content:"Root";
     background-image: url(Images/userInputResultIcon.png);
 }
 
