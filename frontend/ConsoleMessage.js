@@ -45,13 +45,16 @@
  * @param {NetworkAgent.RequestId=} requestId
  * @param {boolean=} isOutdated
  */
-WebInspector.ConsoleMessageImpl = function(source, level, message, linkifier, type, url, line, repeatCount, parameters, stackTrace, requestId, isOutdated)
+WebInspector.ConsoleMessageImpl = function(source, level, message, linkifier, type, url, line, repeatCount, parameters, stackTrace, requestId, serverId, isOutdated)
 {
     WebInspector.ConsoleMessage.call(this, source, level, url, line, repeatCount);
 
     this._linkifier = linkifier;
     this.type = type || WebInspector.ConsoleMessage.MessageType.Log;
     this._messageText = message;
+    //aggiunto da andrea
+    this._serverId = serverId;
+    //aggiunto da andrea
     this._parameters = parameters;
     this._stackTrace = stackTrace;
     this._request = requestId ? WebInspector.networkLog.requestForId(requestId) : null;

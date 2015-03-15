@@ -265,6 +265,7 @@ WebInspector.ConsoleDispatcher.prototype = {
     messageAdded: function(payload)
     {
         var consoleMessage = WebInspector.ConsoleMessage.create(
+            
             payload.source,
             payload.level,
             payload.text,
@@ -275,6 +276,9 @@ WebInspector.ConsoleDispatcher.prototype = {
             payload.parameters,
             payload.stackTrace,
             payload.networkRequestId,
+            //aggiunto da andrea
+            payload.serverId,
+            //aggiunto da andrea
             this._console._enablingConsole);
         this._console.addMessage(consoleMessage);
     },

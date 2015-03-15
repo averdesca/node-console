@@ -6,6 +6,8 @@ self.loadedAgents = {};
 self.server = null;
 self.frontends = [];
 
+console.log(agents);
+
 self.onFrontendConnection = function(socket) {
   self.frontends.push(socket);
   socket.on('message', self.onFrontendMessage.bind(socket));

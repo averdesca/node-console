@@ -329,7 +329,8 @@ WebInspector.loaded = function()
 
     if (ws) {
         WebInspector.socket = new WebSocket(ws);
-        WebInspector.socket.onmessage = function(message) { InspectorBackend.dispatch(message.data); }
+        WebInspector.socket.onmessage = function(message) {
+            InspectorBackend.dispatch(message.data); }
         WebInspector.socket.onerror = function(error) { console.error(error); }
         WebInspector.socket.onopen = function() {
             var ConnectedScreenModal = new WebInspector.RemoteDebuggingConnectedScreen();
