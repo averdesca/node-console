@@ -95,7 +95,7 @@ WebInspector.ConsoleMessageImpl.prototype = {
                     this._messageElement = this._format(args);
                     break;
                 default:
-                    var args = this._parameters || [this._messageText];
+                    var args = this._parameters || [this._messageText] ;
                     this._messageElement = this._format(args);
             }
         } else if (this.source === WebInspector.ConsoleMessage.MessageSource.Network) {
@@ -159,6 +159,19 @@ WebInspector.ConsoleMessageImpl.prototype = {
             this._populateStackTraceTreeElement(root);
             this._formattedMessage = ol;
         }
+        
+        
+
+
+if(this._serverId)
+{
+    var newFirstElement= document.createElement("span"); 
+    newFirstElement.innerHTML = "-@" + this._serverId + "-$ ";
+    this._formattedMessage.insertBefore(newFirstElement, this._formattedMessage.firstChild);
+}
+
+
+
 
         // This is used for inline message bubbles in SourceFrames, or other plain-text representations.
         this._message = this._messageElement.textContent;
